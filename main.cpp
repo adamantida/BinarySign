@@ -24,7 +24,7 @@ void add_signature(const std::string& input_file, const std::string& output_file
     char* encoded_comment = base64_encode(const_cast<char*>(comment.c_str()));
 
     // Добавляем подпись
-    std::string signature = "Signature: " + std::string(encoded_comment);
+    std::string signature = "SignatureSertificationLSD: " + std::string(encoded_comment);
     outfile.write(signature.c_str(), signature.size());
 
     free(encoded_comment);
@@ -39,7 +39,7 @@ void verify_signature(const std::string& file) {
 
     std::string buffer((std::istreambuf_iterator<char>(infile)), std::istreambuf_iterator<char>());
 
-    std::string signature_tag = "Signature: ";
+    std::string signature_tag = "SignatureSertificationLSD: ";
     auto pos = buffer.find(signature_tag);
     if (pos != std::string::npos) {
         std::string encoded_comment = buffer.substr(pos + signature_tag.length());
