@@ -13,6 +13,11 @@ This repository contains a simple C++ application to add and verify a signature 
 - A base64 library (included as `base64.h`)
 
 ## Usage
+There are 4 flags in total
+`-i inputFile` 
+`-o outputFile` 
+`-c comment` 
+`-v verify`
 
 ### Adding a Signature
 
